@@ -21,8 +21,10 @@
 
     # always loaded
     'data': [
-        #'security/ir.model.access.csv',
-        'views/res_partner.xml'
+        'security/ir.model.access.csv',
+        'views/res_partner.xml',
+        'views/reparto.xml',
+        'views/stanza.xml'
 
     ],
     # only loaded in demonstration mode

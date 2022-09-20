@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="action_reparto" model="ir.actions.act_window">
+            <field name="name">Reparti</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.reparto</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="context">{}</field>
+            <field name="domain">[]</field>
+            <field name="help">This wizard will validate all journal entries selected. Once journal entries are validated, you can not update them anymore.</field>
+    </record>
+
+    <!--menu reparti-->
+    <menuitem name="Reparti"
+        id="hospital_reparti_root"
+        parent="hospital_root"/>
+              <!--sequence="1"-->
+
+    <menuitem name="Reparti"
+        id="hospital_reparti"
+        parent="hospital_reparti_root" action="action_reparto"
+        />
+</odoo>
