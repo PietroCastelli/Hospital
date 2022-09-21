@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+<!--filter-->
+    <record id="re_partner_search" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search >
+                    <filter name="filter_isDoctor" string="Doctor" domain="[('isDoctor','=',True)]"/>
+                    <filter name="filter_isPatient" string="Patient" domain="[('isPatient','=',True)]"/>
+                </search>
+            </field>
+    </record>
 <!--form-->
     <record id="res_partner_form_inherited" model="ir.ui.view">
         <field name="name">res.partner.view</field>
@@ -13,23 +22,7 @@
             </xpath>
         </field>
     </record>
-<!--<field name="partner_id" readonly="context.get('readonly_partner_id')"/>-->
-    <!--<record model="ir.ui.view" id="hospital_form">
-        <field name="name">hospital view</field>
-        <field name="model">res.partner</field>
-        <field name="priority" eval="1"/>
-        <field name="arch" type="xml">
-            <sheet>
-                <group>
-                    <field name="name"/>
-                    <field name="isPatient"/>
-                    <field name="isDoctor"/>
-                </group>
-            </sheet>
-        </field>
-    </record>-->
-    <!--action-->
-
+<!--action  hospital menu-->
 <record id="action_hospital" model="ir.actions.act_window">
             <field name="name">Doctor and Patients</field>
             <field name="type">ir.actions.act_window</field>
@@ -39,7 +32,7 @@
             <field name="domain">['|',('isPatient','=',True),('isDoctor','=',True)]</field>
             <field name="help">This wizard will validate all journal entries selected. Once journal entries are validated, you can not update them anymore.</field>
         </record>
-
+<!--action  patient menu-->
     <record id="action_hospital_patient" model="ir.actions.act_window">
             <field name="name">Patients</field>
             <field name="type">ir.actions.act_window</field>
@@ -49,7 +42,7 @@
             <field name="domain">[('isPatient','=',True)]</field>
             <field name="help">This wizard will validate all journal entries selected. Once journal entries are validated, you can not update them anymore.</field>
         </record>
-
+<!--action  doctor menu -->
     <record id="action_hospital_doctor" model="ir.actions.act_window">
             <field name="name">Doctors</field>
             <field name="type">ir.actions.act_window</field>
@@ -60,9 +53,10 @@
             <field name="help">This wizard will validate all journal entries selected. Once journal entries are validated, you can not update them anymore.</field>
         </record>
 
-<!--menu principale-->
+<!--main menu-->
     <menuitem name="Hospital"
         id="hospital_root"
+              web_icon="hospital,static/description/icon.png"
     />
 
     <menuitem name="Hospital"
@@ -87,7 +81,7 @@
               parent="hospital_patient_root"
               action="action_hospital_patient"
     />
-<!--menu Doctor-->
+<!--menu doctors-->
     <menuitem name="Doctors"
         id="hospital_doctor_root"
         parent="hospital_root"

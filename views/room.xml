@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- room form-->
+    <record model="ir.ui.view" id="hospital_room_form">
+        <field name="name">hospital.room.form</field>
+        <field name="model">hospital.room</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="department_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!--action room-->
+    <record id="action_rooms" model="ir.actions.act_window">
+            <field name="name">Rooms</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hospital.room</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="domain">[]</field>
+            <field name="help">This wizard will validate all journal entries selected. Once journal entries are validated, you can not update them anymore.</field>
+    </record>
+<!--menu rooms-->
+    <menuitem name="Rooms"
+        id="hospital_rooms_root"
+        parent="hospital_root"
+    />
+    <menuitem name="Rooms"
+        id="hospital_rooms"
+        parent="hospital_rooms_root" action="action_rooms"
+    />
+</odoo>
