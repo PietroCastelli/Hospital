@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!--kanban-->
+    <record id='hospital_reparto_kanban' model='ir.ui.view'>
+        <field name="name">hospital.reparto.kanban</field>
+        <field name="model">hospital.reparto</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="name" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_vignette oe_semantic_html_override oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div class="o_kanban_button">
+                                <a type="object" name="action_brand_model" class="oe_kanban_action oe_kanban_action_a">
+                                    <button name="action_go_stanze" icon="fa-file-o" type="object">
+                                        <field name="stanze_count" widget="statinfo"/>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
 
     <record id="action_reparto" model="ir.actions.act_window">

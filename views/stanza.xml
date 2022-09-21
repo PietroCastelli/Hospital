@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<!-- stanza form-->
+
+
+    <!-- stanza form-->
     <record model="ir.ui.view" id="hospital_stanza_form">
         <field name="name">hospital.stanza.form</field>
         <field name="model">hospital.stanza</field>
         <field name="arch" type="xml">
             <form>
 <!--da continuare-->
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="reparto_id"/>
+                    </group>
+                </sheet>
 
 
             </form>
