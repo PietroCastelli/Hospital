@@ -11,6 +11,29 @@
                         <field name="name"/>
                         <field name="department_id"/>
                     </group>
+                    <notebook>
+                        <page string="Hospitalization">
+                            <field name="hospitalization_ids">
+                                    <form>
+                                        <field name="name"/>
+                                        <field name="paziente_id"/>
+                                        <field name="doctor_id"/>
+                                        <field name="date_hospitalization_in"/>
+                                        <field name="date_hospitalization_out"/>
+                                        <field name="disease"/>
+                                    </form>
+
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="paziente_id"/>
+                                    <field name="doctor_id"/>
+                                    <field name="date_hospitalization_in"/>
+                                    <field name="date_hospitalization_out"/>
+                                    <field name="disease"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

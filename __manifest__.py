@@ -23,7 +23,8 @@
         'security/ir.model.access.csv',
         'views/res_partner.xml',
         'views/department.xml',
-        'views/room.xml'
+        'views/room.xml',
+        'views/hospitalization.xml'
 
     ],
 

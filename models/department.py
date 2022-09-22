@@ -6,8 +6,7 @@ class department(models.Model):
     name = fields.Char(string="Name")
     rooms_count = fields.Integer(string="rooms", compute="compute_rooms_count")
     room_ids = fields.One2many("hospital.room",
-        "department_id",
-        "rooms ids")
+        "department_id")
 
     def compute_rooms_count(self):
         for rooms in self:
