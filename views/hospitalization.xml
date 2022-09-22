@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!--tree-->
+    <record id="hospitalization_tree" model="ir.ui.view">
+        <field name="name">hospitalization.tree</field>
+        <field name="model">hospital.hospitalization</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="paziente_id" />
+                <field name="doctor_id"/>
+                <field name="date_hospitalization_in"/>
+                <field name="date_hospitalization_out"/>
+                <field name="disease"/>
+                <field name="room_id"/>
+            </tree>
+        </field>
+    </record>
 <!-- room form-->
     <record model="ir.ui.view" id="hospital_hospitalization_form">
         <field name="name">hospital.hospitalization.form</field>
         <field name="model">hospital.hospitalization</field>
         <field name="arch" type="xml">
             <form>
-                <group>
+                <sheet>
+                     <group>
                     <field name="paziente_id"/>
                     <field name="doctor_id"/>
                     <field name="date_hospitalization_in"/>
                     <field name="date_hospitalization_out"/>
                     <field name="disease"/>
+                    <field name="note"/>
                     <field name="room_id"/>
                 </group>
-
+                </sheet>
             </form>
         </field>
     </record>

@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!-- room form-->
+    <record model="ir.ui.view" id="hospital_department_form">
+        <field name="name">hospital.department.form</field>
+        <field name="model">hospital.department</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                     <group>
+                        <field name="name"/>
+                        <field name="rooms_count"/>
+                        <field name="room_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
     <!--kanban-->
     <record id='hospital_department_kanban' model='ir.ui.view'>
         <field name="name">hospital.department.kanban</field>
