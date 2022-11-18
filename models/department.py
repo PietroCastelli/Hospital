@@ -13,6 +13,7 @@ class department(models.Model):
         for rooms in self:
             rooms.rooms_count = len(rooms.room_ids)
     def action_go_rooms(self):
+        print()
         return
 
 
